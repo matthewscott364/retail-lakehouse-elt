@@ -50,25 +50,23 @@ The pipeline follows the **Bronze → Silver → Gold** architecture to ingest r
           │ dbt source()
           ▼
 ┌────────────────────┐
-│ 🟩 Silver Layer     │
+│ 🟩 Silver Layer    │
 │ dbt Staging Model  │
 │                    │
 │ stg_retail_sales   │
 │                    │
 │ • Typed columns    │
 │ • Cleaned strings  │
-│ • Parsed dates     │
 │ • Data tests       │
 └─────────┬──────────┘
           │ dbt ref()
           ▼
 ┌──────────────────────────────┐
 │ 🟨 Gold Layer (Star Schema)  │
-│ dbt Analytics Models        │
+│ dbt Analytics Models         │
 │                              │
 │ • dim_customer               │
 │ • dim_product_category       │
-│ • dim_date                   │
 │ • fct_sales_transactions     │
 │                              │
 │ BI-ready analytics tables    │
@@ -95,14 +93,12 @@ The pipeline follows the **Bronze → Silver → Gold** architecture to ingest r
 - `stg_retail_sales`
   - Standardized column names
   - Typed fields
-  - Parsed dates
   - Cleaned strings
   - Validated with dbt tests
 
 ### 🟨 Gold (Analytics)
 - `dim_customer`
 - `dim_product_category`
-- `dim_date`
 - `fct_sales_transactions`
 
 ---
