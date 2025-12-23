@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: retail_bronze
+    database: retail
+    schema: retail_bronze
+    tables:
+      - name: retail_sales
+        description: "Raw retail sales data ingested from S3 into Bronze"
