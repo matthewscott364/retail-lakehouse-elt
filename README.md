@@ -1,6 +1,25 @@
 # Retail Lakehouse ELT (AWS + Databricks + dbt)
 
-This project implements a cloud-native ELT Lakehouse using AWS S3, Databricks, and dbt.
-Data is processed through Bronze, Silver, and Gold layers and served for analytics.
+## Overview
+End-to-end ELT pipeline implementing Bronze, Silver, and Gold layers
+using AWS S3, Databricks, Unity Catalog, and dbt Core.
 
-Status: 🚧 In progress
+## Architecture
+S3 → Databricks Bronze → dbt Silver → dbt Gold
+
+## Tech Stack
+- AWS S3
+- Databricks SQL + Unity Catalog
+- dbt Core (Databricks adapter)
+- Delta Lake
+
+## Data Model
+- dim_customer
+- dim_product_category
+- dim_date
+- fct_sales_transactions
+
+## Data Quality
+- dbt tests (not null, unique)
+- typed columns
+- standardized schemas
